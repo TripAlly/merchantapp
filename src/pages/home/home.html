@@ -9,24 +9,28 @@
 </ion-header>
 
 <ion-content padding>
-  <div text-center>
-    <img [src]="'https://tripally.co' + merchant.merchant_qr" style="max-width: 80%">
-  </div>
+  <h4 *ngIf="empty" text-center padding-top>Please go to <ion-icon name="settings"></ion-icon> Settings menu and enter your Merchant ID.</h4>
 
-  <p text-center>
-    QR-code of <b>{{ merchant.merchant_name }}</b> Ethereum address to accept payments in ALLY tokens.
-  </p>
+  <div *ngIf="!empty">
+    <div text-center>
+      <img [src]="'https://tripally.co' + merchant.merchant_qr" style="max-width: 80%">
+    </div>
 
-  <p text-center>
-    Or enter address <b>{{ merchant.merchant_name }}</b> manually:
-  </p>
+    <p text-center>
+      QR-code of <b>{{ merchant.merchant_name }}</b> Ethereum address to accept payments in ALLY tokens.
+    </p>
 
-  <p text-center style="color: #f53d3d">
-    {{ merchant.merchant_contract}}
-  </p>
+    <p text-center>
+      Or enter address <b>{{ merchant.merchant_name }}</b> manually:
+    </p>
 
-  <div text-center>
-      <button ion-button color="primary" text-uppercase>Copy</button>
+    <p text-center style="color: #f53d3d">
+      {{ merchant.merchant_contract}}
+    </p>
+
+    <div text-center>
+        <button ion-button color="primary" text-uppercase (click)="copyToClipboard()">Copy</button>
+    </div>
   </div>
 
 

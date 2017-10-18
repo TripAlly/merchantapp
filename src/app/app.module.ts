@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
+import { Clipboard } from '@ionic-native/clipboard';
 
 import { HomePage } from '../pages/home/home';
 import { PaymentsPage } from '../pages/payments/payments';
@@ -43,6 +44,7 @@ import { GlobalProvider } from '../providers/global/global';
   providers: [
     StatusBar,
     SplashScreen,
+    Clipboard,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MerchantServiceProvider,
     GlobalProvider

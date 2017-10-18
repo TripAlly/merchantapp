@@ -1,5 +1,5 @@
-<ion-tabs selectedIndex="3">
-  <ion-tab [root]="homePageRoot" [enabled]="globalProvider.enabledHome" tabTitle="Home" tabIcon="globe" (ionSelect)="onChange()"></ion-tab>
+<ion-tabs>
+  <ion-tab [root]="homePageRoot" tabTitle="Home" tabIcon="globe" (ionSelect)="onChange()"></ion-tab>
   <ion-tab [root]="paymentsPageRoot" tabTitle="Payments" tabIcon="alarm" (ionSelect)="onChange()"></ion-tab>
   <ion-tab [root]="balancePageRoot" tabTitle="Balance" tabIcon="calculator" (ionSelect)="onChange()"></ion-tab>
   <ion-tab [root]="settingsPageRoot" tabTitle="Settings" tabIcon="settings" (ionSelect)="onChange()"></ion-tab>

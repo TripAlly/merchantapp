@@ -13,7 +13,7 @@ import { GlobalProvider } from '../../providers/global/global';
 })
 export class SettingsPage {
   merchantId: string = '';
-  merchantData: Array<any> = [];
+  merchantData: any = [];
   merchantSelected: any = {
     merchant_contract: ''
   };
@@ -30,7 +30,7 @@ export class SettingsPage {
   loadMerchant() {
     this.merchantServiceProvider.load()
       .then(data => {
-        this.merchantData = this.merchantServiceProvider.data;
+        this.merchantData = data;
 
         this.getMerchant();
       });
@@ -53,6 +53,17 @@ export class SettingsPage {
       .then((data) =>{
           this.merchantServiceProvider.selected = this.merchantSelected = data;
           this.globalProvider.enabledHome = true;
+          this.merchantId = data.merchant_id;
+          console.log(data)
+        }, (error) => {
+          console.error(error);
+        }
+      );
+  }
+
+  removeMerchant() {
+    this.nativeStorage.remove('merchant')
+      .then((data) =>{
           console.log(data)
         }, (error) => {
           console.error(error);
@@ -62,6 +73,14 @@ export class SettingsPage {
 
   onKeyUp() {
     let filtered: Array<Object>;
+
+    if (!this.merchantId.length) {
+      this.removeMerchant();
+
+      this.merchantSelected = {
+        merchant_contract: ''
+      };
+    }
 
     filtered = this.merchantData.filter(v => {
       return (this.merchantId.toUpperCase() === v.merchant_id)
@@ -75,6 +94,8 @@ export class SettingsPage {
         .then(() => console.log('Stored item!'),
               error => console.error('Error storing item', error)
         );
+    } else {
+      this.removeMerchant();
     }
 
 

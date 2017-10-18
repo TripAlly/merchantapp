@@ -7,12 +7,14 @@ import { MerchantServiceProvider } from '../../providers/merchant-service/mercha
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-  providers: [ NativeStorage, Clipboard, MerchantServiceProvider ]
+  providers: [ NativeStorage, MerchantServiceProvider ]
 })
 export class HomePage {
   merchant = {
     merchant_contract: ''
   };
+
+  empty: Boolean = true;
 
   constructor(public navCtrl: NavController,
               private nativeStorage: NativeStorage,
@@ -33,10 +35,12 @@ export class HomePage {
     this.nativeStorage.getItem('merchant')
       .then((data) =>{
           this.merchant = data;
+          this.empty = false;
 
           console.log(data)
         }, (error) => {
           console.error(error);
+          this.empty = true;
         }
       );
   }

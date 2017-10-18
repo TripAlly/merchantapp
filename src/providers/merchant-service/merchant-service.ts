@@ -18,9 +18,9 @@ export class MerchantServiceProvider {
   }
 
   load() {
-    if (this.data) {
-      return Promise.resolve(this.data);
-    }
+    // if (this.data) {
+    //   return Promise.resolve(this.data);
+    // }
 
     return new Promise(resolve => {
       this.http.get('https://tripally.co/merchant.json')
