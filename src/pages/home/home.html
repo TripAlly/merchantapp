@@ -1,17 +1,33 @@
 <ion-header>
+
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>
+      Accept payment in ALLY
+    </ion-title>
   </ion-navbar>
+
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
+  <div text-center>
+    <img [src]="'https://tripally.co' + merchant.merchant_qr" style="max-width: 80%">
+  </div>
+
+  <p text-center>
+    QR-code of <b>{{ merchant.merchant_name }}</b> Ethereum address to accept payments in ALLY tokens.
   </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
+
+  <p text-center>
+    Or enter address <b>{{ merchant.merchant_name }}</b> manually:
   </p>
+
+  <p text-center style="color: #f53d3d">
+    {{ merchant.merchant_contract}}
+  </p>
+
+  <div text-center>
+      <button ion-button color="primary" text-uppercase>Copy</button>
+  </div>
+
+
 </ion-content>

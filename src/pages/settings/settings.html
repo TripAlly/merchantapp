@@ -1,0 +1,56 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      Settings and Configurations
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <div text-center>
+    <img src="assets/logo.png" style="width: 45%">
+  </div>
+
+  <p text-center no-margin margin-bottom>
+    TripAlly Merchant App version 1.23
+  </p>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+          <ion-list>
+
+            <ion-item>
+              <ion-label >Merchant ID</ion-label>
+              <ion-input type="text" [(ngModel)]="merchantId" (keyup)="onKeyUp()"></ion-input>
+            </ion-item>
+
+          </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="font-weight: bold; font-size: 1.5rem;">
+      <ion-col col-5>Merchant name:</ion-col>
+      <ion-col col-7>{{ merchantSelected.merchant_name }}</ion-col>
+    </ion-row>
+
+    <ion-row style="font-weight: bold; font-size: 1.5rem;">
+      <ion-col col-5>Merchant contract:</ion-col>
+      <ion-col col-7>{{ merchantSelected.merchant_contract }}</ion-col>
+    </ion-row>
+
+    <ion-row style="font-weight: bold; font-size: 1.5rem;">
+      <ion-col col-5 style=" padding-top: 9px;">Etherscan Log:</ion-col>
+      <ion-col col-7>
+          <button ion-button small (click)="openEtherscan()" *ngIf="merchantSelected.merchant_contract">Open Etherscan</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div text-center padding-top>
+      <button ion-button color="danger" text-uppercase large (click)="upgradeApp()">Upgrade App</button>
+  </div>
+
+</ion-content>

@@ -1,0 +1,10 @@
+[
+{"merchant_id": "ABC1", "merchant_name": "Hotel White Orchid, Bangkok", "merchant_contract": "0x9C0E4ad9C92000AB4530841D019F3bc27d1197EA", "merchant_qr": "/qr/qr_merch1.png"},
+{"merchant_id": "ABC2", "merchant_name": "Massage Lucky Orchid", "merchant_contract": "0x75EE9Fede131B781C4f19F6253B2311fA625245F", "merchant_qr": "/qr/qr_merch1.png"},
+{"merchant_id": "ABC3", "merchant_name": "Wild West Bar", "merchant_contract": "0x469ae1582407796c152eC78B084fA6DDA80c10A8", "merchant_qr": "/qr/qr_merch1.png"},
+{"merchant_id": "ABC4", "merchant_name": "Sunset Horizon Disco", "merchant_contract": " ", "merchant_qr": " "},
+{"merchant_id": "ABC5", "merchant_name": "69 Go-Go Bar", "merchant_contract": " ", "merchant_qr": " "},
+{"merchant_id": "ABC6", "merchant_name": "Terazza Restaraunt", "merchant_contract": " ", "merchant_qr": " "},
+{"merchant_id": "ABC7", "merchant_name": "Blue Moon Minimart", "merchant_contract": " ", "merchant_qr": " "},
+{"merchant_id": "ABC8", "merchant_name": "Sabadee SPA", "merchant_contract": " ", "merchant_qr": " "}
+]
