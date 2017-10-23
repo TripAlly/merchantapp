@@ -19,11 +19,18 @@ export class BalancePage {
   empty: Boolean = true;
 
   constructor(public navCtrl: NavController, public http: Http, private nativeStorage: NativeStorage) {
-    this.http.get('http://tripally.co:8080/?address=0x9a49b818C95ea8a496F0FBdb444D55aAF100Be76')
+  }
+
+  ionViewWillEnter() {
+    this.getMerchant()
+    this.updateBalance();
+  }
+
+  updateBalance() {
+    this.http.get('https://tripally.co/api/?address=' + this.merchant.merchant_contract)
       .map(res => res.json())
       .subscribe(data => {
         this.balance = data;
-        console.log(this.balance);
       });
   }
 
@@ -32,8 +39,6 @@ export class BalancePage {
       .then((data) =>{
           this.merchant = data;
           this.empty = false;
-
-          console.log(data)
         }, (error) => {
           console.error(error);
           this.empty = true;

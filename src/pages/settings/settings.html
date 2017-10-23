@@ -13,9 +13,19 @@
     <img src="assets/logo.png" style="width: 45%">
   </div>
 
-  <p text-center no-margin margin-bottom>
+  <p text-center no-margin margin-bottom *ngIf="!updating">
     TripAlly Merchant App ver 1.23
   </p>
+
+  <div *ngIf="updating">
+    <p text-center>
+      <ion-spinner name="bubbles"></ion-spinner>
+    </p>
+
+    <p text-center>
+        Updating...
+    </p>
+  </div>
 
   <ion-grid>
     <ion-row>
@@ -61,7 +71,7 @@
   </ion-grid>
 
   <ion-fab right top>
-      <button ion-fab color="secondary" round icon-only text-uppercase large (click)="upgradeApp()">
+      <button ion-fab color="secondary" round icon-only text-uppercase large (click)="checkForUpdates()">
         <ion-icon name="refresh"></ion-icon>
       </button>
   </ion-fab>

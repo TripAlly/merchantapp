@@ -19,6 +19,8 @@
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
+    <preference name="AndroidExtraFilesystems" value="root" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
@@ -77,8 +79,13 @@
         <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />
     </platform>
     <engine name="android" spec="^6.2.3" />
+    <plugin name="com-darryncampbell-cordova-plugin-intent" spec="0.0.14" />
     <plugin name="cordova-clipboard" spec="^1.1.0" />
+    <plugin name="cordova-plugin-app-version" spec="^0.1.9" />
     <plugin name="cordova-plugin-device" spec="^1.1.4" />
+    <plugin name="cordova-plugin-file" spec="^4.3.3" />
+    <plugin name="cordova-plugin-file-opener2" spec="^2.0.19" />
+    <plugin name="cordova-plugin-file-transfer" spec="^1.6.3" />
     <plugin name="cordova-plugin-inappbrowser" spec="^1.7.1" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.15" />
     <plugin name="cordova-plugin-nativestorage" spec="^2.2.2" />

@@ -25,12 +25,14 @@
     </h6>
 
     <h2 text-center>
-      {{ balance.client_balance }} ALLY
+      {{ balance.client_balance.toFixed(2) }} ALLY
     </h2>
 
-    <div text-center>
-        <button ion-button color="secondary" text-uppercase (click)="copyToClipboard()">Copy</button>
-    </div>
+    <p text-center>or</p>
+
+    <h2 text-center>
+      {{ (balance.client_balance * merchant.ally_thb).toFixed(2) }} THB
+    </h2>
   </div>
 
 </ion-content>
