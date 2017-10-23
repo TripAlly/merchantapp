@@ -9,5 +9,28 @@
 </ion-header>
 
 <ion-content padding>
+  <h4 *ngIf="empty" text-center padding-top>Please go to <ion-icon name="settings"></ion-icon> Settings menu and enter your Merchant ID.</h4>
+
+  <div *ngIf="!empty">
+    <div text-center>
+      <img src="assets/logo.png" style="width: 45%">
+    </div>
+
+    <h5 text-center>
+      {{ merchant.merchant_name }}
+    </h5>
+
+    <h6 text-center>
+      Current balance is:
+    </h6>
+
+    <h2 text-center>
+      {{ balance.client_balance }} ALLY
+    </h2>
+
+    <div text-center>
+        <button ion-button color="secondary" text-uppercase (click)="copyToClipboard()">Copy</button>
+    </div>
+  </div>
 
 </ion-content>
